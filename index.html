@@ -79,6 +79,9 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
 .work-more { color: var(--gray-400); font-size: 16px; line-height: 1.5; transition: transform 200ms var(--transition); }
 .work-card[open] .work-more { transform: rotate(45deg); }
 .work-case { padding: 0 20px 20px 76px; }
+.work-figure { margin: 0 0 16px; }
+.work-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--gray-200); border-radius: 8px; }
+.work-figure figcaption { margin-top: 6px; font-family: "DM Mono", monospace; font-size: 11px; color: var(--gray-400); }
 .work-case h4 { font-size: 14px; font-weight: 500; color: var(--gray-800); margin: 14px 0 2px; }
 .work-case h4:first-child { margin-top: 0; }
 .work-case p { font-size: 14px; line-height: 1.5; }
@@ -186,7 +189,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
               </div>
             </a>
             <a href="#" class="media-card">
-              <div class="media-thumb"></div>
+              <div class="media-thumb"><img src="hurbana-os.jpg" alt="Hurbana OS em dois minutos" loading="lazy"></div>
               <div class="media-info">
                 <p class="media-show">Hurbana OS</p>
                 <h3 class="media-title">Hurbana OS em dois minutos</h3>
@@ -220,6 +223,10 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                 <span class="work-more" aria-hidden="true">+</span>
               </summary>
               <div class="work-case">
+                <figure class="work-figure">
+                  <img src="hurbana-os.jpg" alt="Tela de custo da obra no Hurbana OS" loading="lazy">
+                  <figcaption>Custo da obra, com dados fictícios.</figcaption>
+                </figure>
                 <h4>O problema</h4>
                 <p>Os dados da obra viviam em três sistemas. Cada engenheiro gastava cerca de uma semana por mês exportando planilhas para montar o forecast.</p>
                 <h4>O que fiz</h4>
@@ -256,7 +263,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                 <div class="work-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"></path><rect x="9" y="3" width="6" height="4" rx="1"></rect><path d="M9 14l2 2 4-4"></path></svg></div>
                 <div class="work-info">
                   <h3 class="work-title">Inspeções de obra</h3>
-                  <p class="work-desc">Solução urgente no Base44 que chegou a 1.800 inspeções no primeiro mês.</p>
+                  <p class="work-desc">Aplicativos no Base44 para registrar inspeções e enviar os problemas aos mestres de obra.</p>
                   <p class="work-metric">1.800 inspeções no primeiro mês</p>
                 </div>
                 <span class="work-more" aria-hidden="true">+</span>
@@ -281,6 +288,10 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                 <span class="work-more" aria-hidden="true">+</span>
               </summary>
               <div class="work-case">
+                <figure class="work-figure">
+                  <img src="linkedin-post.jpg" alt="Regras do Código de Obras estruturadas em Python no Obsidian" loading="lazy">
+                  <figcaption>Regras da legislação estruturadas no Obsidian.</figcaption>
+                </figure>
                 <h4>O problema</h4>
                 <p>O agente gastava cerca de 40 mil tokens por sessão só para ler a legislação, e ainda esquecia regras no meio dos documentos.</p>
                 <h4>O que fiz</h4>
@@ -306,6 +317,25 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                 <p>O fluxo detecta o arquivo liberado no Drive, junta PDF e DWG da mesma revisão, marca a anterior como obsoleta e manda uma única mensagem para a equipe.</p>
                 <h4>Uma decisão</h4>
                 <p>A operação segue regras previsíveis. A IA entra para ler o PDF, não para decidir.</p>
+              </div>
+            </details>
+            <details class="work-card">
+              <summary class="work-summary">
+                <div class="work-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+                <div class="work-info">
+                  <h3 class="work-title">Schuller Labs</h3>
+                  <p class="work-desc">Newsletter sobre IA para negócios que criei nas férias, com site próprio e pesquisa automatizada em n8n.</p>
+                  <p class="work-metric">Site próprio · 2 edições</p>
+                </div>
+                <span class="work-more" aria-hidden="true">+</span>
+              </summary>
+              <div class="work-case">
+                <figure class="work-figure">
+                  <img src="schuller-labs.gif" alt="Página inicial do site do Schuller Labs" loading="lazy">
+                  <figcaption>Página inicial de schullerlabs.com.br.</figcaption>
+                </figure>
+                <h4>Onde está</h4>
+                <p>Fiz o site, indexei no Google e liguei a captação de assinantes. Publiquei duas edições e pausei por causa do trabalho e da faculdade.</p>
               </div>
             </details>
       </div>
