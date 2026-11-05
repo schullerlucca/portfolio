@@ -75,6 +75,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
 .work-info { flex: 1 1 0%; min-width: 0; }
 .work-title { font-size: 14px; font-weight: 500; color: var(--gray-800); margin-bottom: 4px; }
 .work-desc { font-size: 14px; color: var(--gray-500); line-height: 1.5; }
+.work-metric { font-family: "DM Mono", monospace; font-size: 12px; color: var(--gray-400); margin-top: 6px; line-height: 1.5; }
 .work-more { color: var(--gray-400); font-size: 16px; line-height: 1.5; transition: transform 200ms var(--transition); }
 .work-card[open] .work-more { transform: rotate(45deg); }
 .work-case { padding: 0 20px 20px 76px; }
@@ -214,6 +215,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                 <div class="work-info">
                   <h3 class="work-title">Hurbana OS</h3>
                   <p class="work-desc">Sistema interno que junta os dados da obra num só lugar. Em teste com a Engenharia, um time de 27 pessoas.</p>
+                  <p class="work-metric">20 páginas · 14 funcionando · em teste</p>
                 </div>
                 <span class="work-more" aria-hidden="true">+</span>
               </summary>
@@ -234,6 +236,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                 <div class="work-info">
                   <h3 class="work-title">Liderar com IA</h3>
                   <p class="work-desc">Treinamento de IA para 24 líderes da empresa, incluindo diretoria e CEO, com aplicativo próprio criado em dois dias.</p>
+                  <p class="work-metric">24 líderes · 6 tardes · app em 2 dias</p>
                 </div>
                 <span class="work-more" aria-hidden="true">+</span>
               </summary>
@@ -254,6 +257,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                 <div class="work-info">
                   <h3 class="work-title">Inspeções de obra</h3>
                   <p class="work-desc">Solução urgente no Base44 que chegou a 1.800 inspeções no primeiro mês.</p>
+                  <p class="work-metric">1.800 inspeções no primeiro mês</p>
                 </div>
                 <span class="work-more" aria-hidden="true">+</span>
               </summary>
@@ -272,6 +276,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                 <div class="work-info">
                   <h3 class="work-title">Auditoria automática de projetos</h3>
                   <p class="work-desc">RAG no Obsidian, com YAML e Python, que confere o modelo do Revit contra a legislação.</p>
+                  <p class="work-metric">Evita ~40 mil tokens por sessão</p>
                 </div>
                 <span class="work-more" aria-hidden="true">+</span>
               </summary>
@@ -290,6 +295,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                 <div class="work-info">
                   <h3 class="work-title">Liberação de projetos</h3>
                   <p class="work-desc">Protótipo em n8n que avisa a obra quando uma revisão de projeto muda.</p>
+                  <p class="work-metric">Validado com arquivo real</p>
                 </div>
                 <span class="work-more" aria-hidden="true">+</span>
               </summary>
@@ -300,20 +306,6 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                 <p>O fluxo detecta o arquivo liberado no Drive, junta PDF e DWG da mesma revisão, marca a anterior como obsoleta e manda uma única mensagem para a equipe.</p>
                 <h4>Uma decisão</h4>
                 <p>A operação segue regras previsíveis. A IA entra para ler o PDF, não para decidir.</p>
-              </div>
-            </details>
-            <details class="work-card">
-              <summary class="work-summary">
-                <div class="work-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
-                <div class="work-info">
-                  <h3 class="work-title">Schuller Labs</h3>
-                  <p class="work-desc">Newsletter sobre IA para negócios que criei nas férias, com site próprio e pesquisa automatizada em n8n.</p>
-                </div>
-                <span class="work-more" aria-hidden="true">+</span>
-              </summary>
-              <div class="work-case">
-                <h4>Onde está</h4>
-                <p>Fiz o site, indexei no Google e liguei a captação de assinantes. Publiquei duas edições e pausei por causa do trabalho e da faculdade.</p>
               </div>
             </details>
       </div>
