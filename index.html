@@ -63,6 +63,20 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
 .media-title { font-size: 14px; font-weight: 500; color: var(--gray-800); line-height: 1.4; margin-bottom: 6px; }
 .media-views { display: flex; align-items: center; gap: 6px; font-family: "DM Mono", monospace; font-size: 12px; color: var(--gray-400); }
 .media-views svg { width: 12px; height: 12px; }
+.media-card.em-breve { cursor: default; }
+.media-card.em-breve:hover { background: var(--white); border-color: var(--gray-200); transform: none; }
+.media-card.em-breve:hover .media-thumb img { filter: grayscale(100%); opacity: .9; }
+.media-thumb { position: relative; }
+.media-play { position: absolute; left: 50%; top: 50%; width: 28px; height: 28px; margin: -14px 0 0 -14px; border-radius: 50%; background: rgba(255, 255, 255, .92); color: var(--gray-800); display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 4px rgba(0, 0, 0, .2); transition: transform 200ms var(--transition); }
+.media-play svg { width: 12px; height: 12px; margin-left: 2px; }
+.media-card:hover .media-play { transform: scale(1.08); }
+.video-modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(10, 10, 10, .8); backdrop-filter: blur(6px); animation: modalIn 200ms var(--easing); }
+.video-modal[hidden] { display: none; }
+.video-box { position: relative; width: min(960px, 100%); }
+.video-box video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 12px; box-shadow: 0 20px 60px rgba(0, 0, 0, .4); }
+.video-close { position: absolute; top: -44px; right: 0; width: 34px; height: 34px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .14); color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
+.video-close:hover { background: rgba(255, 255, 255, .26); }
+@keyframes modalIn { from { opacity: 0; } to { opacity: 1; } }
 
 .work-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; transition: all 200ms var(--transition); }
 .work-card:hover { background: var(--gray-50); border-color: var(--gray-300); transform: translateY(-2px); }
@@ -180,23 +194,23 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
     <section class="section">
       <div class="section-label">Mídia</div>
       <div class="media-cards">
-            <a href="#" class="media-card">
+            <div class="media-card em-breve">
               <div class="media-thumb"><img src="liderar-com-ia.jpg" alt="Liderar com IA: a primeira tarde com 24 líderes" loading="lazy"></div>
               <div class="media-info">
                 <p class="media-show">Hurbana</p>
                 <h3 class="media-title">Liderar com IA: a primeira tarde com 24 líderes</h3>
                 <p class="media-views"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg><span>Vídeo em breve</span></p>
               </div>
-            </a>
-            <a href="#" class="media-card">
+            </div>
+            <div class="media-card em-breve">
               <div class="media-thumb"><img src="hurbana-os.jpg" alt="Hurbana OS em dois minutos" loading="lazy"></div>
               <div class="media-info">
                 <p class="media-show">Hurbana OS</p>
                 <h3 class="media-title">Hurbana OS em dois minutos</h3>
                 <p class="media-views"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg><span>Demo em breve</span></p>
               </div>
-            </a>
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7456458299316551680/" target="_blank" rel="noopener noreferrer" class="media-card">
+            </div>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7456458299316551680/" class="media-card" target="_blank" rel="noopener noreferrer">
               <div class="media-thumb"><img src="linkedin-post.jpg" alt="Auditoria de projetos com Claude Code, Obsidian e Revit" loading="lazy"></div>
               <div class="media-info">
                 <p class="media-show">LinkedIn</p>
@@ -376,6 +390,13 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
   </footer>
 </div>
 
+<div class="video-modal" id="player" role="dialog" aria-modal="true" aria-label="Vídeo" hidden>
+  <div class="video-box">
+    <button class="video-close" type="button" aria-label="Fechar vídeo">×</button>
+    <video controls playsinline preload="none"></video>
+  </div>
+</div>
+
 <div class="copy-feedback" id="aviso" role="status" aria-live="polite">E-mail copiado</div>
 
 <script>
@@ -425,6 +446,32 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
     aviso.classList.add('show');
     setTimeout(() => aviso.classList.remove('show'), 2000);
   });
+
+  const player = document.getElementById('player');
+  const video = player.querySelector('video');
+  const fecharBotao = player.querySelector('.video-close');
+  let origem = null;
+  const fecharVideo = () => {
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+    player.hidden = true;
+    document.body.style.overflow = '';
+    if (origem) origem.focus();
+  };
+  document.querySelectorAll('[data-video]').forEach(cartao => cartao.addEventListener('click', e => {
+    e.preventDefault();
+    origem = cartao;
+    video.poster = cartao.dataset.poster || '';
+    video.src = cartao.dataset.video;
+    player.hidden = false;
+    document.body.style.overflow = 'hidden';
+    fecharBotao.focus();
+    video.play().catch(() => {});
+  }));
+  fecharBotao.addEventListener('click', fecharVideo);
+  player.addEventListener('click', e => { if (e.target === player) fecharVideo(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !player.hidden) fecharVideo(); });
 </script>
 </body>
 </html>
