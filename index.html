@@ -170,7 +170,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
         <span>ou</span>
         <button class="btn btn-secondary" type="button" id="copiar">Copiar e-mail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
       </div>
-      <p class="coordinates anim-fade"><span>FLORIANÓPOLIS</span><span>·</span><span id="lat">27.5954</span><span>° S, </span><span id="lng">48.5480</span><span>° W</span></p>
+      <p class="coordinates anim-fade"><span>PALHOÇA</span><span>·</span><span id="lat">27.6450</span><span>° S, </span><span id="lng">48.6678</span><span>° W</span></p>
     </header>
   </div>
 
@@ -357,7 +357,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                   <figcaption>Página inicial de schullerlabs.com.br.</figcaption>
                 </figure>
                 <h4>Onde está</h4>
-                <p>Fiz o site, indexei no Google e liguei a captação de assinantes. Publiquei duas edições e pausei por causa do trabalho e da faculdade.</p>
+                <p>Fiz o site, indexei no Google e liguei a captação de assinantes. Publiquei <a class="about-link" href="https://schullerlabs.com.br/newsletter/" target="_blank" rel="noopener noreferrer">duas edições</a> e pausei por causa do trabalho e da faculdade.</p>
               </div>
             </details>
       </div>
@@ -429,8 +429,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
     const inicioSecoes = inicioIcones + icones.length * 50 + 100;
     document.querySelectorAll('.anim-section').forEach((el, i) => setTimeout(() => el.classList.add('animate'), inicioSecoes + i * 150));
     setTimeout(() => {
-      sortear(document.getElementById('lat'), '27.5954', 800);
-      sortear(document.getElementById('lng'), '48.5480', 900);
+      sortear(document.getElementById('lat'), '27.6450', 800);
+      sortear(document.getElementById('lng'), '48.6678', 900);
     }, inicioIcones + 400);
   };
   iniciar();
