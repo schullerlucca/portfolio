@@ -242,13 +242,13 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                   <figcaption>Custo da obra, com dados fictícios.</figcaption>
                 </figure>
                 <h4>O problema</h4>
-                <p>Os dados da obra viviam em três sistemas. Cada engenheiro gastava cerca de uma semana por mês exportando planilhas para montar o forecast.</p>
+                <p>Todo mês, alguém tirava três relatórios do Sienge e copiava os valores à mão para uma planilha nova. Depois vinham correções, ajustes com a gerência e conversas com outros engenheiros, e só então os slides e o one-pager do forecast. Como a planilha passava de um mês para o outro, um erro de fórmula podia seguir adiante. Só no ajuste do orçamento, cada engenheiro gastava cerca de 3 horas por semana.</p>
                 <h4>O que fiz</h4>
-                <p>Conversei com o time, anotei as dores e transformei cada uma em funcionalidade. Liguei as APIs do Sienge, Prevision e Inmeta numa base própria, com login e permissões por perfil e obra. O almoxarife ganhou uma área só dele.</p>
+                <p>Conversei com o time, anotei as dores e transformei cada uma em funcionalidade. Liguei as APIs do Sienge, Prevision e Inmeta numa base própria, com login e permissões por perfil e obra. No custo da obra, os dados entram sozinhos: o engenheiro só ajusta os valores de contratação no custo por nível, fecha o mês e a apresentação sai pronta. O almoxarife ganhou uma área só dele.</p>
                 <h4>Uma decisão</h4>
                 <p>Tela sem dado real é marcada como em construção, e indicador sem fórmula validada não mostra número. Prefiro um vazio honesto a um número bonito.</p>
                 <h4>Onde está</h4>
-                <p>20 páginas, 14 já funcionando. A meta é devolver essa semana para a análise e, depois, dar a cada setor seu aplicativo sobre o mesmo banco.</p>
+                <p>20 páginas, 14 já funcionando, em teste com parte da Engenharia. A meta é devolver esse tempo para a análise e, depois, dar a cada setor seu aplicativo sobre o mesmo banco.</p>
               </div>
             </details>
             <details class="work-card">
@@ -281,18 +281,20 @@ button { font: inherit; background: none; border: none; cursor: pointer; appeara
                 <div class="work-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"></path><rect x="9" y="3" width="6" height="4" rx="1"></rect><path d="M9 14l2 2 4-4"></path></svg></div>
                 <div class="work-info">
                   <h3 class="work-title">Inspeções de obra</h3>
-                  <p class="work-desc">Aplicativos no Base44 para registrar inspeções e enviar os problemas aos mestres de obra.</p>
+                  <p class="work-desc">Aplicativos no Base44 que tiraram as inspeções de obra do Excel.</p>
                   <p class="work-metric">1.800 inspeções no primeiro mês</p>
                 </div>
                 <span class="work-more" aria-hidden="true">+</span>
               </summary>
               <div class="work-case">
                 <h4>O problema</h4>
-                <p>O setor precisava registrar inspeções com urgência, e o sistema principal ainda não estava pronto.</p>
+                <p>As inspeções eram anotadas no celular ou direto numa planilha, sem histórico organizado. O setor precisava de uma solução com urgência, e o sistema principal ainda não estava pronto.</p>
                 <h4>O que fiz</h4>
-                <p>Montei aplicativos simples para resolver na hora. Os engenheiros passaram a identificar problemas e enviá-los aos mestres de obra.</p>
+                <p>Montei aplicativos simples para resolver na hora. Cada inspeção fica registrada e filtrável por torre, pavimento, apartamento, status e tipo. O engenheiro exporta a lista da semana de cada empreiteira e entrega as tarefas.</p>
                 <h4>Uma decisão</h4>
                 <p>Não fazia sentido esperar. Usei a ferramenta mais simples que resolvia e mantive o foco no Hurbana OS.</p>
+                <h4>Resultado</h4>
+                <p>1.800 inspeções registradas no primeiro mês, num processo que antes não deixava histórico.</p>
               </div>
             </details>
             <details class="work-card">
